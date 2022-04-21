@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 MaintenanceTasks::Engine.routes.draw do
+  mount MaintenanceTasks::Engine => "/maintenance_tasks"
   resources :tasks, only: [:index, :show], format: false do
     member do
       put "run"
